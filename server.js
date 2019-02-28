@@ -20,6 +20,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {
   configOptions(filesArr, sortOption);
-  let records = processInput(filesArr);
+  let records = processInput(filesArr, sortOption);
   console.log(records);
 });
