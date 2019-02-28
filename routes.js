@@ -2,15 +2,20 @@
  * @fileoverview GET and POST routes
  */
 
-module.exports = (req, res) => {
+const processInput = require('./processInput');
+
+module.exports = (req, res, filesArr) => {
   // GET
   if (req.method === 'GET') {
     if (req.url === '/records/gender') {
-      res.end(JSON.stringify({sort: 'gender'}));
+      let records = processInput(filesArr, 'gender');
+      res.end(JSON.stringify(records));
     } else if (req.url === '/records/birthdate') {
-      res.end(JSON.stringify({sort: 'birthdate'}));
+      let records = processInput(filesArr, 'dob');
+      res.end(JSON.stringify(records));
     } else if (req.url === '/records/name') {
-      res.end(JSON.stringify({sort: 'name'}));
+      let records = processInput(filesArr, 'name');
+      res.end(JSON.stringify(records));
     }
   }
 
