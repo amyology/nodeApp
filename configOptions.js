@@ -4,11 +4,20 @@
 
 module.exports = (filesArr, sortOption, runTest) => {
   if (runTest) {
-    let testRecordsController = require('./tests/test_recordsController');
     let testRecordModel = require('./tests/test_recordModel');
-    
-    testRecordsController();
-    testRecordModel();
+    let testRecordsController = require('./tests/test_recordsController');
+    let testProcessInputService = require('./tests/test_processInputService');
+
+    let recordModelResults = testRecordModel();
+    let recordsControllerResults = testRecordsController();
+    let processInputServiceResults = testProcessInputService();
+
+    let testsPassed = recordModelResults.pass + recordsControllerResults.pass + processInputServiceResults.pass;
+    let totalTests = recordModelResults.pass + recordModelResults.fail
+                      + recordsControllerResults.pass + recordsControllerResults.fail
+                      + processInputServiceResults.pass + processInputServiceResults.fail;
+
+    console.log(Math.floor(testsPassed / totalTests * 100) + '% of Tests Passed');
   } else {
     if (filesArr.length > 0) {
       for (let fileName of filesArr) {
