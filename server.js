@@ -1,7 +1,7 @@
 const http = require('http');
-const routes = require('./routes');
+const recordsController = require('./recordsController');
 const configOptions = require('./configOptions');
-const processInput = require('./processInput');
+const processInputService = require('./processInputService');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -15,11 +15,12 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
 
-  routes(req, res, filesArr);
+  recordsController(req, res, filesArr);
 });
 
 server.listen(port, hostname, () => {
   configOptions(filesArr, sortOption);
-  let records = processInput(filesArr, sortOption);
+
+  let records = processInputService.processInput(filesArr, sortOption);
   console.log(records);
 });

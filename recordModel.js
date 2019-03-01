@@ -17,7 +17,7 @@ module.exports = class Record {
     this.lastName = last;
     this.firstName = first;
     this.gender = gender;
-    this.dob = dob;
+    this.dob = `${dob.getMonth() + 1}/${dob.getDate()}/${dob.getFullYear()}`;
     this.favoriteColor = color;
   }
 }
