@@ -1,0 +1,23 @@
+[
+  {
+    "lastName": "McConaughey",
+    "firstName": "Matthew",
+    "gender": "Male",
+    "dob": "11/4/1969",
+    "favoriteColor": "Blue"
+  },
+  {
+    "lastName": "Hathaway",
+    "firstName": "Anne",
+    "gender": "Female",
+    "dob": "11/12/1982",
+    "favoriteColor": "Green"
+  },
+  {
+    "lastName": "Chastain",
+    "firstName": "Jessica",
+    "gender": "Female",
+    "dob": "3/24/1977",
+    "favoriteColor": "Red"
+  }
+]

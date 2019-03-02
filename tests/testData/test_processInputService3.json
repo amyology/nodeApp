@@ -1,0 +1,16 @@
+[
+  {
+    "lastName": "DiCaprio",
+    "firstName": "Leonardo",
+    "gender": "Male",
+    "dob": "11/11/1984",
+    "favoriteColor": "Purple"
+  },
+  {
+    "lastName": "Gordon-Levitt",
+    "firstName": "Joseph",
+    "gender": "Male",
+    "dob": "2/17/1981",
+    "favoriteColor": "Yellow"
+  }
+]

@@ -16,10 +16,15 @@ For the --files parameter, list the names of the files you want to include (sepa
 
 For the --sort parameter, enter "gender" to sort by gender and last name (ascending), "dob" to sort by date of birth (ascending), or "name" to sort by last name (descending).
 
-### To Run With API
+### To Run API
 ```
 node server.js --files sample.csv sample2.csv sample3.csv --api
 ```
+Endpoints:
+GET /records/gender
+GET /records/birthdate
+GET /records/name
+POST /records
 
 ### To Run Unit Tests
 ```

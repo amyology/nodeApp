@@ -1,0 +1,16 @@
+[
+  {
+    "lastName": "Bale",
+    "firstName": "Christian",
+    "gender": "Male",
+    "dob": "1/30/1974",
+    "favoriteColor": "Black"
+  },
+  {
+    "lastName": "Cotillard",
+    "firstName": "Marion",
+    "gender": "Female",
+    "dob": "9/30/1975",
+    "favoriteColor": "Brown"
+  }
+]
