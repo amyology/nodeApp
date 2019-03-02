@@ -4,12 +4,16 @@
 
 const processInputService = require('./processInputService');
 
-module.exports = (filesArr, sortOption, runTest, api) => {
+module.exports = (filesIndex, filesArr, sortIndex, sortOption, runTest, api) => {
   if (runTest) {
     const tests = require('./tests/tests');
     tests();
     process.exit();
   } else {
+    if (filesIndex < 0) {
+      throw new Error('--files parameter is missing. Please enter a list of file names separated by a single space.');
+    }
+
     if (filesArr.length > 0) {
       for (let fileName of filesArr) {
         console.log(`Processing file ${fileName}...`);
@@ -19,6 +23,10 @@ module.exports = (filesArr, sortOption, runTest, api) => {
     }
   
     if (api) {
+      if (sortIndex > 0) {
+        throw new Error('--sort parameter is invalid if using --api parameter');
+      }
+
       console.log(`Possible endpoints:
 GET http://localhost:3000/records/gender - to sort by gender and last name (ascending)
 GET http://localhost:3000/records/birthdate - to sort by date of birth (ascending)

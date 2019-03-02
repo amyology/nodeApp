@@ -5,7 +5,7 @@ const configOptions = require('./configOptions');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const filesIndex = process.argv.indexOf('--files') > 0 ? process.argv.indexOf('--files') : 2;
+const filesIndex = process.argv.indexOf('--files');
 const sortIndex = process.argv.indexOf('--sort');
 const sortOption = process.argv[sortIndex + 1];
 const runTest = process.argv.indexOf('--test') > 0;
@@ -20,7 +20,6 @@ if (api) {
   filesArr = sortIndex > filesIndex ? process.argv.slice(filesIndex + 1, sortIndex) : process.argv.slice(filesIndex + 1, process.argv.length);
 }
 
-
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
@@ -31,5 +30,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  configOptions(filesArr, sortOption, runTest, api);
+  configOptions(filesIndex, filesArr, sortIndex, sortOption, runTest, api);
 });

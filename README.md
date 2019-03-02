@@ -21,14 +21,13 @@ For the --sort parameter, enter "gender" to sort by gender and last name (ascend
 node server.js --files sample.csv sample2.csv sample3.csv --api
 ```
 Endpoints:
-
+```
 GET /records/gender
-
 GET /records/birthdate
-
 GET /records/name
-
 POST /records
+```
+POST body should be a string or array of strings
 
 ### To Run Unit Tests
 ```
